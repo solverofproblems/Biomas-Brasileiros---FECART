@@ -46,7 +46,7 @@ class ClassificadorBiomas:
         print("📁 Carregando imagens com data augmentation...")
         
         train_generator = self.train_datagen.flow_from_directory(
-            "dataset/train",
+            "dataset/learn",
             target_size=self.img_size,
             batch_size=self.batch_size,
             class_mode='sparse',
