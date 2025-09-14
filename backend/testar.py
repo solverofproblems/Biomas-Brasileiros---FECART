@@ -12,7 +12,7 @@ def testar_imagem(caminho_imagem):
         return
     
     # Carregar modelo treinado
-    modelo_path = "backend/modelo_biomas_avancado.h5"
+    modelo_path = "backend/melhor_modelo.h5"
     if not os.path.exists(modelo_path):
         print("❌ Modelo não encontrado! Execute 'python modelo.py' primeiro.")
         return
@@ -42,7 +42,7 @@ def main():
     print("="*50)
     
     # Verificar se o modelo existe
-    if not os.path.exists("backend/modelo_biomas_avancado.h5"):
+    if not os.path.exists("backend/melhor_modelo.h5"):
         print("❌ Modelo não encontrado!")
         print("💡 Execute primeiro: python modelo.py")
         return
