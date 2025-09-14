@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FloraCatalog - Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .plant-name {
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 1px;
+        }
+        .custom-rounded {
+            border-radius: 15px;
+        }
+        .floating-btn {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 30;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateX(-50%) translateY(0px); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+            100% { transform: translateX(-50%) translateY(0px); }
+        }
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .carousel-image {
+            transition: opacity 1.5s ease-in-out;
+        }
+        @media (max-width: 768px) {
+            .flex-col-reverse-mobile {
+                flex-direction: column-reverse;
+            }
+            .w-full-mobile {
+                width: 100% !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-['Montserrat']">
+    <!-- Menu Superior -->
+    <nav class="bg-green-800 text-white shadow-lg fixed w-full top-0 z-40">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold">FloraCatalog</div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="home_bioma.html" class="hover:text-green-200 transition">Home</a>
+                    <a href="catalogo_Biomas.html" class="hover:text-green-200 transition">Catálogo</a>
+                    <a href="sobre_Biomas.html" class="hover:text-green-200 transition">Sobre</a>
+                    <a href="contato_biomas.html" class="hover:text-green-200 transition">Contato</a>
+                    <a href="https://www.fecap.br/colegio/sobre-o-colegio/" target="_blank" rel="noopener noreferrer">
+                        <img src="LOGO-FECAP.png" alt="Coégio Fecap" width="30" height="30" />
+                    </a>
+                </div>
+                <button class="md:hidden focus:outline-none" id="mobile-menu-button">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Menu Mobile -->
+        <div class="hidden md:hidden bg-green-800 px-4 py-2" id="mobile-menu">
+            <div class="flex flex-col space-y-3 pb-3">
+                <a href="home_bioma.html" class="hover:text-green-200 transition">Home</a>
+                <a href="catalogo_Biomas.html" class="hover:text-green-200 transition">Catálogo</a>
+                <a href="sobre_Biomas.html" class="hover:text-green-200 transition">Sobre</a>
+                <a href="contato_biomas.html" class="hover:text-green-200 transition">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carrossel de Imagens -->
+    <div class="relative h-screen w-full mt-16">
+        <!-- Imagens do carrossel -->
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" 
+                 alt="Floresta tropical" 
+                 class="carousel-image absolute inset-0 w-full h-full object-cover opacity-100" 
+                 id="image-1">
+            <img src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" 
+                 alt="Floresta temperada" 
+                 class="carousel-image absolute inset-0 w-full h-full object-cover opacity-0" 
+                 id="image-2">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" 
+                 alt="Montanhas" 
+                 class="carousel-image absolute inset-0 w-full h-full object-cover opacity-0" 
+                 id="image-3">
+            <img src="https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" 
+                 alt="Floresta outonal" 
+                 class="carousel-image absolute inset-0 w-full h-full object-cover opacity-0" 
+                 id="image-4">
+        </div>
+        
+        <!-- Sobreposição escura para melhor contraste do texto -->
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+        
+        <!-- Conteúdo sobreposto -->
+        <div class="absolute inset-0 z-10 flex flex-col items-center justify-center text-center text-white px-4">
+            <h1 class="plant-name text-5xl md:text-7xl mb-4 fade-in">FloraCatalog</h1>
+            <p class="text-xl md:text-2xl max-w-2xl mb-8 fade-in">Descubra a beleza e diversidade dos biomas brasileiros através da identificação de plantas</p>
+            
+            <div class="flex flex-wrap justify-center gap-4 mt-8">
+                <a href="catalogo_Biomas.html" class="bg-green-700 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">
+                    Explorar Catálogo
+                </a>
+                <a href="sobre_Biomas.html" class="bg-transparent hover:bg-green-800 text-white font-bold py-3 px-6 border-2 border-white rounded-lg transition duration-300 transform hover:scale-105">
+                    Sobre o Projeto
+                </a>
+            </div>
+        </div>
+        
+        <!-- Botão flutuante para identificação -->
+        <a href="index_Biomas.html" class="floating-btn bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-full shadow-lg transition duration-300">
+            📸 Tire uma foto e descubra o bioma
+        </a>
+    </div>
+
+    <!-- Seção de recursos -->
+    <div class="container mx-auto px-4 py-16">
+        <h2 class="text-3xl md:text-4xl text-center text-green-900 plant-name mb-12">Como funciona</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <div class="text-4xl mb-4">📸</div>
+                <h3 class="text-xl font-semibold text-green-800 mb-2">Identifique Plantas</h3>
+                <p class="text-gray-700">Use sua câmera para fotografar plantas e descubra a qual bioma elas pertencem.</p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <div class="text-4xl mb-4">🌿</div>
+                <h3 class="text-xl font-semibold text-green-800 mb-2">Explore o Catálogo</h3>
+                <p class="text-gray-700">Navegue por nossa coleção de plantas organizadas por biomas e características.</p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <div class="text-4xl mb-4">📚</div>
+                <h3 class="text-xl font-semibold text-green-800 mb-2">Aprenda Mais</h3>
+                <p class="text-gray-700">Descubra informações detalhadas sobre cada planta e seu ecossistema.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="bg-green-900 text-white py-8 mt-8">
+        <div class="container mx-auto px-4 text-center space-y-6">
+            <p>© 2023 FloraCatalog - Todos os direitos reservados</p>
+
+            <!-- Links -->
+            <div class="flex justify-center space-x-4">
+                <a href="#" class="hover:text-green-300 transition">Termos</a>
+                <a href="#" class="hover:text-green-300 transition">Privacidade</a>
+                <a href="contato_biomas.html" class="hover:text-green-300 transition">Contato</a>
+            </div>
+
+            <!-- Grid com duas colunas -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6 text-left max-w-3xl mx-auto">
+
+                <!-- Colaboradores -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-2 text-center md:text-left">Desenvolvedores</h3>
+                    <div class="text-sm space-y-1">
+                        <p>Beatriz Aysha de Lima São Bernardo</p>
+                        <p>Beatriz Picler Cantaruti</p>
+                        <p>Bianca Coelho Ribeiro</p>
+                        <p>Carlos Eduardo de Lima</p>
+                        <p>Gabriela Witkowski</p>
+                    </div>
+                </div>
+
+                <!-- Professores -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-2 text-center md:text-left">Professores</h3>
+                    <div class="text-sm space-y-1">
+                        <p>Rodnil da Silva Moreira Lisboa</p>
+                        <p>João Francisco Trencher Martins</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu mobile toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Carrossel de imagens
+        const images = [
+            document.getElementById('image-1'),
+            document.getElementById('image-2'),
+            document.getElementById('image-3'),
+            document.getElementById('image-4')
+        ];
+        
+        let currentImage = 0;
+        
+        function changeBackgroundImage() {
+            // Esconde imagem atual
+            images[currentImage].style.opacity = 0;
+            
+            // Avança para próxima imagem
+            currentImage = (currentImage + 1) % images.length;
+            
+            // Mostra nova imagem
+            setTimeout(() => {
+                images[currentImage].style.opacity = 1;
+            }, 100);
+        }
+        
+        // Inicia o carrossel
+        setInterval(changeBackgroundImage, 5000); // Muda a cada 5 segundos
+    </script>
+</body>
+</html>
