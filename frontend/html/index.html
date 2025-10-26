@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Carlos Eduardo de Lima">
+    <title>Classificador de Biomas Brasileiros - IA para Agricultura Sustentável</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Axios para comunicação com o backend -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h1>🌱 Classificador de Biomas</h1>
+            </div>
+            <div class="nav-links">
+                <a href="#introducao">Introdução</a>
+                <a href="#teste">Teste o Modelo</a>
+                <a href="#motivacao">Motivação</a>
+                <a href="#contato">Contato</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <!-- Seção Introdução -->
+        <section id="introducao" class="section">
+            <div class="container">
+                <div class="intro-content">
+                    <h2 class="section-title">Inteligência Artificial para Agricultura Sustentável</h2>
+                    <div class="intro-text">
+                        <p>O modelo de rede neural proposto tem o objetivo de classificar imagens de biomas brasileiros — como <strong>Amazônia</strong>, <strong>Cerrado</strong>, <strong>Caatinga</strong>, <strong>Mata Atlântica</strong>, <strong>Pampa</strong> e <strong>Pantanal</strong> — a partir de suas características visuais, como tipo de vegetação e relevo.</p>
+                        
+                        <p>Com o uso de técnicas de <em>aprendizado profundo</em> e <em>transferência de conhecimento</em>, ele busca alcançar uma acurácia mínima de <span class="highlight">70%</span> na identificação correta dos biomas. O propósito do projeto é apoiar práticas de agricultura sustentável, indicando quais plantas e cultivos são mais adequados a cada região, ajudando a evitar a degradação ambiental e o avanço das monoculturas.</p>
+                        
+                        <div class="features-grid">
+                            <div class="feature-card">
+                                <div class="feature-icon">🧠</div>
+                                <h3>Deep Learning</h3>
+                                <p>Redes neurais avançadas para classificação precisa</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🌿</div>
+                                <h3>Sustentabilidade</h3>
+                                <p>Agricultura responsável e preservação ambiental</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🎯</div>
+                                <h3>Precisão</h3>
+                                <p>70% de acurácia na identificação de biomas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Teste do Modelo -->
+        <section id="teste" class="section">
+            <div class="container">
+                <h2 class="section-title">Teste o Modelo</h2>
+                <div class="test-container">
+                    <!-- Seleção de Imagens da Base de Dados -->
+                    <div class="image-selection-area">
+                        <div class="upload-icon">🗂️</div>
+                        <h3>Escolha uma Imagem da Base de Dados</h3>
+                        <p>Selecione uma imagem para classificação real com IA</p>
+                        
+                        <div class="bioma-filters">
+                            <button class="filter-btn active" data-bioma="todos">Todos</button>
+                            <button class="filter-btn" data-bioma="amazonia">Amazônia</button>
+                            <button class="filter-btn" data-bioma="caatinga">Caatinga</button>
+                            <button class="filter-btn" data-bioma="cerrado">Cerrado</button>
+                            <button class="filter-btn" data-bioma="mata atlantica">Mata Atlântica</button>
+                            <button class="filter-btn" data-bioma="pampa">Pampa</button>
+                            <button class="filter-btn" data-bioma="pantanal">Pantanal</button>
+                        </div>
+                        
+                        <div class="image-grid" id="imageGrid">
+                            <div class="loading-images">
+                                <div class="loading-spinner"></div>
+                                <p>Carregando imagens da base de dados...</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="results-area">
+                        <h3>Resultados da Análise</h3>
+                        <div class="results-placeholder">
+                            <p>📊 <em>Os resultados aparecerão aqui após selecionar uma imagem...</em></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Motivação -->
+        <section id="motivacao" class="section">
+            <div class="container">
+                <h2 class="section-title">O que nos incentivou a criar o projeto</h2>
+                <div class="motivation-content">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">128%</div>
+                            <div class="stat-label">Aumento no uso de herbicidas (2010-2020)</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">719,5k</div>
+                            <div class="stat-label">Toneladas de agrotóxicos usados em 2021</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">24%</div>
+                            <div class="stat-label">Crescimento da área cultivada no mesmo período</div>
+                        </div>
+                    </div>
+                    
+                    <div class="motivation-text">
+                        <p>A motivação para este projeto surge do avanço das <strong>monoculturas no Brasil</strong> e do uso crescente de agrotóxicos em áreas ambientalmente inadequadas. Entre 2010 e 2020, o consumo de herbicidas aumentou <span class="highlight">128%</span>, enquanto a área cultivada cresceu apenas <span class="highlight">24%</span>.</p>
+                        
+                        <p>Em 2021, o país utilizou cerca de <span class="highlight">719,5 mil toneladas de agrotóxicos</span>, superando os EUA e a China juntos. Diante disso, o projeto busca empregar inteligência artificial para identificar biomas brasileiros e indicar cultivos sustentáveis, reduzindo a degradação ambiental e a dependência química na agricultura.</p>
+                        
+                        <div class="references">
+                            <h4>Referências:</h4>
+                            <ul>
+                                <li><a href="https://www.brasildefato.com.br/2024/02/06/brazil-uses-more-pesticides-than-the-us-and-china-together/" target="_blank" rel="noopener">Brasil usa mais agrotóxicos que EUA e China juntos - Brasil de Fato</a></li>
+                                <li><a href="https://www.embrapa.br/busca-de-noticias/-/noticia/101797650/herbicide-use-in-brazil-grew-128-between-2010-and-2020" target="_blank" rel="noopener">Uso de herbicidas no Brasil cresceu 128% entre 2010 e 2020 - Embrapa</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contato" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FECAP</h3>
+                    <p>Fundadação Escola de Comércio Álvares Penteado</p>
+                    <p>Site desenvolvido por Carlos Eduardo de Lima e Beatriz Aysha De Lima Sao Bernardo</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <div class="contact-links">
+                        <a href="mailto:carloselima373@gmail.com" class="contact-link">
+                            📧 carloselima373@gmail.com
+                        </a>
+                        <a href="https://github.com/solverofproblems" target="_blank" rel="noopener" class="contact-link">
+                            💻 GitHub
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Projeto</h3>
+                    <p>Classificador de Biomas Brasileiros</p>
+                    <p>IA para Agricultura Sustentável</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; Fundação Escola de Comércio Álvares Penteado - FECAP. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/javascript.js"></script>
+</body>
+</html>
