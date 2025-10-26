@@ -2,7 +2,7 @@
 
 Sistema completo de **Inteligência Artificial** para classificação de imagens de biomas brasileiros, desenvolvido com **Deep Learning** e interface web moderna.
 
-## 🎯 **Sobre o Projeto**
+## 🎯 Sobre o Projeto
 
 Este projeto utiliza **Transfer Learning** com **MobileNetV2** para criar um classificador inteligente que identifica automaticamente biomas brasileiros a partir de imagens. O sistema combina:
 
@@ -10,33 +10,33 @@ Este projeto utiliza **Transfer Learning** com **MobileNetV2** para criar um cla
 - **Frontend**: Interface web moderna e responsiva
 - **API**: Comunicação em tempo real entre frontend e backend
 
-## 🚀 **Como Executar**
+## 🚀 Como Executar
 
-### **1. Instalar Dependências**
+### 1. Instalar Dependências
 ```bash
 pip install -r requirements.txt
 ```
 
-### **2. Treinar o Modelo de IA**
+### 2. Treinar o Modelo de IA
 ```bash
 cd backend
 python modelo.py
 ```
 > ⏱️ **Tempo estimado**: 15-30 minutos (dependendo do hardware)
 
-### **3. Iniciar o Sistema Completo**
+### 3. Iniciar o Sistema Completo
 ```bash
 cd backend
 python api.py
 ```
 
-### **4. Acessar a Interface Web**
+### 4. Acessar a Interface Web
 Abra seu navegador e acesse:
 ```
 http://localhost:5000
 ```
 
-## 📁 **Estrutura do Projeto**
+## 📁 Estrutura do Projeto
 
 ```
 Classificador de Biomas (finalizado)/
@@ -71,7 +71,7 @@ Classificador de Biomas (finalizado)/
 └── README.md               # Este arquivo
 ```
 
-## 🎯 **Biomas Suportados**
+## 🎯 Biomas Suportados
 
 | Bioma | Descrição | Características |
 |-------|-----------|-----------------|
@@ -82,16 +82,16 @@ Classificador de Biomas (finalizado)/
 | **🌱 Pampa** | Campos do sul | Vegetação herbácea, campos abertos |
 | **🦆 Pantanal** | Planície alagada | Vegetação aquática, áreas alagadas |
 
-## ✨ **Funcionalidades**
+## ✨ Funcionalidades
 
-### **🤖 Inteligência Artificial**
+### 🤖 Inteligência Artificial
 - ✅ **Transfer Learning** com MobileNetV2
 - ✅ **Data Augmentation** para melhor generalização
 - ✅ **Early Stopping** para evitar overfitting
 - ✅ **Model Checkpointing** para salvar o melhor modelo
 - ✅ **Acurácia**: ~85-90% nos dados de validação
 
-### **🌐 Interface Web**
+### 🌐 Interface Web
 - ✅ **Seleção de Imagens**: Escolha entre imagens da base de dados
 - ✅ **Filtros por Bioma**: Visualize imagens por categoria
 - ✅ **Classificação em Tempo Real**: Resultados instantâneos
@@ -99,15 +99,15 @@ Classificador de Biomas (finalizado)/
 - ✅ **Interface Responsiva**: Funciona em desktop e mobile
 - ✅ **Feedback Visual**: Animações e indicadores de carregamento
 
-### **🔧 API REST**
+### 🔧 API REST
 - ✅ **GET /api/status**: Status do modelo
 - ✅ **GET /api/imagens**: Lista de imagens disponíveis
 - ✅ **POST /api/classificar**: Classificar imagem
 - ✅ **GET /dataset/**: Servir imagens estáticas
 
-## 💻 **Tecnologias Utilizadas**
+## 💻 Tecnologias Utilizadas
 
-### **Backend**
+### Backend
 - **Python 3.8+**
 - **TensorFlow/Keras**: Deep Learning
 - **Flask**: API web
@@ -115,13 +115,13 @@ Classificador de Biomas (finalizado)/
 - **Pillow**: Processamento de imagens
 - **Matplotlib**: Visualização
 
-### **Frontend**
+### Frontend
 - **HTML5**: Estrutura
 - **CSS3**: Estilos e animações
 - **JavaScript ES6+**: Lógica da interface
 - **Axios**: Comunicação com API
 
-## 🎮 **Como Usar a Interface**
+## 🎮 Como Usar a Interface
 
 1. **Acesse** `http://localhost:5000`
 2. **Escolha** uma imagem da base de dados
@@ -129,7 +129,7 @@ Classificador de Biomas (finalizado)/
 4. **Veja** os resultados da IA em tempo real
 5. **Use** os filtros para navegar por biomas
 
-## 📊 **Exemplo de Resultado**
+## 📊 Exemplo de Resultado
 
 ```
 🎯 Resultado da Análise com IA
@@ -143,9 +143,9 @@ Top 3 Predições:
 3. Cerrado - 1.8%
 ```
 
-## 🔧 **Configurações Avançadas**
+## 🔧 Configurações Avançadas
 
-### **Modificar Parâmetros do Modelo**
+### Modificar Parâmetros do Modelo
 Edite `backend/modelo.py`:
 ```python
 # Ajustar tamanho da imagem
@@ -158,42 +158,42 @@ BATCH_SIZE = 32
 EPOCHS = 50
 ```
 
-### **Adicionar Novos Biomas**
+### Adicionar Novos Biomas
 1. Crie pastas em `dataset/learn/` e `dataset/validation/`
 2. Adicione imagens nas pastas
 3. Atualize `class_names` em `modelo.py` e `api.py`
 
-## 🐛 **Solução de Problemas**
+## 🐛 Solução de Problemas
 
-### **❌ "Modelo não encontrado"**
+### ❌ "Modelo não encontrado"
 ```bash
 cd backend
 python modelo.py  # Treinar primeiro
 ```
 
-### **❌ "Backend não conecta"**
+### ❌ "Backend não conecta"
 - Verifique se está rodando na porta 5000
 - Confirme se `python api.py` foi executado
 - Verifique firewall/antivírus
 
-### **❌ "Imagens não aparecem"**
+### ❌ "Imagens não aparecem"
 - Verifique se o dataset existe
 - Confirme se as imagens estão nas pastas corretas
 - Verifique console do navegador (F12)
 
-### **❌ "Erro de memória"**
+### ❌ "Erro de memória"
 - Reduza `BATCH_SIZE` em `modelo.py`
 - Feche outros programas
 - Use GPU se disponível
 
-## 📈 **Performance**
+## 📈 Performance
 
 - **Treinamento**: 15-30 minutos
 - **Classificação**: < 1 segundo
 - **Acurácia**: 85-90%
 - **Modelo**: ~15MB (MobileNetV2)
 
-## 🤝 **Contribuição**
+## 🤝 Contribuição
 
 Para contribuir com o projeto:
 1. Fork o repositório
@@ -202,11 +202,11 @@ Para contribuir com o projeto:
 4. Push para a branch
 5. Abra um Pull Request
 
-## 📄 **Licença**
+## 📄 Licença
 
 Este projeto foi desenvolvido por **Carlos Eduardo de Lima** para a **FECAP**.
 
-## 🎓 **Agradecimentos**
+## 🎓 Agradecimentos
 
 - **FECAP** - Faculdade de Economia, Administração e Contabilidade
 - **TensorFlow Team** - Framework de Deep Learning
